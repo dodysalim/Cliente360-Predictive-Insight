@@ -4,14 +4,6 @@
 
 ---
 
-<p align="center">
-  <img src="reports/figures/15_executive_dashboard.png" width="900">
-  <br>
-  <i>Figura 1: Dashboard Ejecutivo Integral — Vista consolidada de KPIs, Predicciones de Gasto y Segmentación de Mercado.</i>
-</p>
-
----
-
 ## 📑 Índice de Contenidos Extendido
 
 1.  [📌 Resumen Ejecutivo de Alta Dirección](#-resumen-ejecutivo-de-alta-dirección)
@@ -23,7 +15,7 @@
 7.  [🧹 Ingeniería de Datos y Calidad](#-ingeniería-de-datos-y-calidad)
 8.  [🧠 Inteligencia Predictiva y ML](#-inteligencia-predictiva-y-ml)
 9.  [🌆 Caso de Éxito: Mercado Miami](#-caso-de-éxito-mercado-miami)
-10. [📊 Resultados y Hallazgos de Negocio](#-resultados-y-hallazgos-de-negocio)
+10. [📊 Resultados y Dashboard Ejecutivo](#-resultados-y-dashboard-ejecutivo)
 11. [💾 Guía de Operación](#-guía-de-operación)
 12. [🚧 Roadmap Estratégico](#-roadmap-estratégico)
 13. [👤 Autor y Contacto](#-autor-y-contacto)
@@ -50,8 +42,6 @@ La organización enfrentaba problemas de **Ceguera Transaccional**, **Marketing 
 A continuación, se presenta el proceso analítico paso a paso, organizado por áreas de impacto:
 
 ### 📊 Fase A: Diagnóstico y Mercado
-Entender quién es el cliente y cómo se posiciona en mercados clave como Miami.
-
 <table border="0">
  <tr>
     <td><b style="font-size:14px">Distribución Demográfica</b></td>
@@ -64,8 +54,6 @@ Entender quién es el cliente y cómo se posiciona en mercados clave como Miami.
 </table>
 
 ### 🌐 Fase B: Inteligencia de Oferta (Yelp API)
-Enriquecimiento con datos exógenos para auditar la competencia local y los ratings de la zona.
-
 <table border="0">
  <tr>
     <td><b style="font-size:14px">Exploración de Oferta (Yelp)</b></td>
@@ -78,8 +66,6 @@ Enriquecimiento con datos exógenos para auditar la competencia local y los rati
 </table>
 
 ### 🧠 Fase C: Modelado Avanzado y ML
-Predicción de gasto mediante Gradient Boosting y descubrimiento de segmentos via K-Means.
-
 <table border="0">
  <tr>
     <td><b style="font-size:14px">Evaluación de Regresión (XGBoost)</b></td>
@@ -92,8 +78,6 @@ Predicción de gasto mediante Gradient Boosting y descubrimiento de segmentos vi
 </table>
 
 ### 🎯 Fase D: Entrega de Valor al Negocio
-El resultado final: recomendaciones personalizadas y el dashboard de toma de decisiones.
-
 <table border="0">
  <tr>
     <td><b style="font-size:14px">Sistema de Recomendación 360°</b></td>
@@ -107,32 +91,37 @@ El resultado final: recomendaciones personalizadas y el dashboard de toma de dec
 
 ---
 
-## 🏛️ Arquitectura del Motor (SOLID Engineering)
+## 📊 Resultados y Dashboard Ejecutivo
 
-El código ha sido refactorizado bajo estándares industriales, permitiendo escalabilidad y desacoplamiento total:
+El payoff final de toda la tubería analítica es el **Dashboard Integral de Negocio**, donde se consolidan las predicciones financieras con el perfilamiento psicográfico de los clientes.
 
-*   **S (Single Responsibility)**: Módulos específicos para limpieza, API y modelado.
-*   **O (Open/Closed)**: Fácil integración de nuevos algoritmos (ej. LightGBM).
-*   **D (Dependency Inversion)**: Orquestación centralizada en `run_pipeline.py`.
+<p align="center">
+  <img src="reports/figures/15_executive_dashboard.png" width="900">
+  <br>
+  <i>Figura 1: Dashboard Ejecutivo Integral — Consolidación de Inteligencia Predictiva y Segmentación.</i>
+</p>
+
+### 💡 Hallazgos Críticos:
+- **Impacto Premium**: La membresía aumenta el ticket promedio en un **42%**.
+- **Precisión R² de 0.85**: Capacidad predictiva estable para presupuestos anuales.
+- **Brechas de Calidad**: 5 zonas identificadas para expansión inmediata basadas en ratings mediocres de la competencia local.
 
 ---
 
-## 📊 Resultados y Hallazgos de Negocio
+## 🏛️ Arquitectura del Motor (SOLID Engineering)
 
-> [!TIP]
-> **Insight Principal**: La membresía Premium es el mayor predictor de gasto, aumentando el ticket promedio en un **42%**, independientemente del nivel de ingresos.
-
-- **4 Segmentos Claros**: Del cliente "Elite" al cliente "Oportunidad Miami".
-- **Precisión R² de 0.85**: Capacidad robusta de proyecciones financieras.
-- **Detección de Brechas**: Identificamos 5 zonas con saturación de oferta premium pero alta demanda casual insatisfecha.
+El código ha sido refactorizado bajo estándares industriales:
+*   **S (Single Responsibility)**: Módulos específicos e independientes.
+*   **O (Open/Closed)**: Arquitectura preparada para el crecimiento.
+*   **D (Dependency Inversion)**: Orquestación vía `run_pipeline.py`.
 
 ---
 
 ## 💾 Guía de Operación
 
-1.  **Configuración**: `pip install -r requirements.txt`
-2.  **Credenciales**: Configurar `.env` con las claves de Yelp.
-3.  **Ejecución**: `python run_pipeline.py` (Procesamiento completo de 0 a 100).
+1.  **Instalación**: `pip install -r requirements.txt`
+2.  **Seguridad**: Configurar `.env` con las API Keys.
+3.  **Ejecución**: `python run_pipeline.py`
 
 ---
 
@@ -140,8 +129,6 @@ El código ha sido refactorizado bajo estándares industriales, permitiendo esca
 
 <p align="center">
   <img src="reports/figures/17_roadmap.png" width="800">
-  <br>
-  <i>Planificación a 24 meses: Del análisis estático hacia la Inteligencia en Tiempo Real.</i>
 </p>
 
 ---
@@ -150,11 +137,7 @@ El código ha sido refactorizado bajo estándares industriales, permitiendo esca
 
 **Dody Dueñas**  
 *Data Scientist & Analytics Architect*  
-*Proyecto Integrador Empresarial — Henry Bootcamp*
+*Henry Bootcamp*
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dody-duenas/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dodysalim)
-
----
-
-> **Nota final**: Este proyecto está diseñado para funcionar en entornos de producción, garantizando la trazabilidad y reproducibilidad de los resultados.
