@@ -4,23 +4,21 @@
 
 ---
 
-## 📑 Índice de Contenidos Extendido
+## 📑 Índice de Contenidos
 
 1.  [📌 Resumen Ejecutivo de Alta Dirección](#-resumen-ejecutivo-de-alta-dirección)
 2.  [🎯 El Desafío de Negocio: Visión 360°](#-el-desafío-de-negocio-visión-360)
 3.  [🌳 Estructura de Activos y Gobernanza](#-estructura-de-activos-y-gobernanza)
 4.  [🛠️ Metodología de Implementación: CRISP-DM Senior](#-metodología-de-implementación-crisp-dm-senior)
 5.  [🏛️ Arquitectura del Motor (SOLID Engineering)](#-arquitectura-del-motor-solid-engineering)
-6.  [🔍 Walkthrough Visual: El Camino del Dato](#-walkthrough-visual-el-camino-del-dato)
-7.  [🧹 Fase 1: Ingeniería de Datos y Calidad](#-fase-1-ingeniería-de-datos-y-calidad)
-8.  [🌐 Fase 2: Inteligencia Exógena (Yelp API)](#-fase-2-inteligencia-exógena-integración-yelp-api)
-9.  [🧠 Fase 3 y 4: Modelado Predictivo y ML](#-fase-3-y-4-modelado-predictivo-y-ml)
-10. [🌆 Caso de Éxito: Mercado Miami](#-caso-de-éxito-mercado-miami)
-11. [📊 Resultados y Dashboard Ejecutivo de Impacto](#-resultados-y-dashboard-ejecutivo-de-impacto)
-12. [💡 Conclusiones Estratégicas y Hallazgos](#-conclusiones-estratégicas-y-hallazgos)
-13. [💾 Guía de Operación y Master Pipeline](#-guía-de-operación-y-master-pipeline)
-14. [🚧 Roadmap Estratégico a 24 Meses](#-roadmap-estratégico-a-24-meses)
-15. [👤 Autor y Contacto](#-autor-y-contacto)
+6.  [🔍 Walkthrough Visual: Flujo de Valor](#-walkthrough-visual-flujo-de-valor)
+7.  [🧹 Ingeniería de Datos y Calidad](#-ingeniería-de-datos-y-calidad)
+8.  [🧠 Inteligencia Predictiva y ML](#-inteligencia-predictiva-y-ml)
+9.  [🌆 Caso de Éxito: Mercado Miami](#-caso-de-éxito-mercado-miami)
+10. [📊 Resultados y Dashboard Ejecutivo](#-resultados-y-dashboard-ejecutivo)
+11. [💾 Guía de Operación](#-guía-de-operación)
+12. [🚧 Roadmap Estratégico](#-roadmap-estratégico)
+13. [👤 Autor y Contacto](#-autor-y-contacto)
 
 ---
 
@@ -28,13 +26,13 @@
 
 **Cliente360°** representa la culminación de un proceso de ingeniería de datos y ciencia de datos aplicada a la resolución de problemas complejos de crecimiento corporativo. No se trata simplemente de un conjunto de scripts, sino de un **entorno de inteligencia** diseñado para extraer valor accionable de la interacción entre los clientes y su entorno urbano.
 
-El núcleo del sistema utiliza una combinación de **ML supervisado** (XGBoost) y **No supervisado** (K-Means++), complementado con **Inteligencia Geo-espacial** proveniente de la API de Yelp. Esta triada permite a la organización no solo saber *quién* es su cliente, sino *cómo* se comportará en el futuro.
+El núcleo del sistema utiliza una combinación de **ML supervisado** e **Inteligencia Geo-espacial** (Yelp Fusion API) para extraer valor accionable del comportamiento de los consumidores.
 
 ---
 
 ## 🎯 El Desafío de Negocio: Visión 360°
 
-La organización enfrentaba problemas críticos de **Ceguera Transaccional**, **Marketing Ineficiente** y **Desconexión con el Entorno**. Este proyecto aborda estos retos para lograr:
+La organización enfrentaba problemas de **Ceguera Transaccional**, **Marketing Ineficiente** y **Desconexión con el Entorno**. Este proyecto aborda estos retos mediante:
 *   **CLV Predictivo**: Proyecciones financieras con un **R² de 0.85**.
 *   **Eficiencia en Marketing**: Segmentación algorítmica para optimizar el CAC.
 *   **Geomarketing**: Identificación de brechas de oferta externa en ciudades clave.
@@ -43,7 +41,7 @@ La organización enfrentaba problemas críticos de **Ceguera Transaccional**, **
 
 ## 🌳 Estructura de Activos y Gobernanza
 
-La organización del proyecto sigue estándares internacionales, donde cada archivo tiene un propósito definido:
+La organización del proyecto sigue estándares internacionales, donde cada carpeta tiene un propósito definido:
 
 ```bash
 Proyecto_Integrador_Dody_Empresarial/
@@ -51,10 +49,6 @@ Proyecto_Integrador_Dody_Empresarial/
 ├── data/                       # 📂 Data Lake (Raw, External, Interim, Processed).
 ├── notebooks/                  # 📊 Reportes Analíticos (EDA -> Insights).
 ├── src/                        # 🛠️ Engine modular (SOLID Architecture).
-│   ├── data/                 # Cleaners y Loaders.
-│   ├── api/                  # Gestión de Yelp Fusion v3.
-│   ├── features/             # Generación de señales de negocio.
-│   └── models/               # Entrenamiento y persistencia ML.
 ├── reports/                    # 📈 Outputs de Negocio (Figuras y Tablas).
 ├── run_pipeline.py             # 🚀 Master Orquestador (Automatización Total).
 └── requirements.txt            # Contrato de dependencias.
@@ -74,16 +68,24 @@ Hemos aplicado una versión profesional de **CRISP-DM** para garantizar resultad
 
 ---
 
-## 🔍 Walkthrough Visual: El Camino del Dato
+## 🏛️ Arquitectura del Motor (SOLID Engineering)
 
-A continuación, se detalla el flujo de valor del proyecto paso a paso:
+El sistema ha sido construido bajo principios de ingeniería de software para garantizar su escalabilidad:
+*   **S (Single Responsibility)**: Código modular desacoplado por función.
+*   **O (Open/Closed)**: Arquitectura preparada para añadir nuevos modelos.
+*   **D (Dependency Inversion)**: Orquestación centralizada para ejecución sin errores.
+
+---
+
+## 🔍 Walkthrough Visual: Flujo de Valor
+
+A continuación, se detalla el proceso analítico paso a paso del proyecto:
 
 ### 📊 Fase A: Diagnóstico de Base Instalada
-Iniciamos con una auditoría profunda de la calidad de información y el perfilamiento demográfico inicial de la base de clientes.
-
+Iniciamos con una auditoría profunda de la calidad de información y perfilamiento demográfico.
 <table border="0">
  <tr>
-    <td><b style="font-size:14px">Audit de Integridad (Nulos)</b></td>
+    <td><b style="font-size:14px">Audit de Integridad</b></td>
     <td><b style="font-size:14px">Perfilamiento Demográfico</b></td>
  </tr>
  <tr>
@@ -93,8 +95,7 @@ Iniciamos con una auditoría profunda de la calidad de información y el perfila
 </table>
 
 ### 🌐 Fase B: Inteligencia de Entorno (Yelp API)
-Cruzamos la ubicación de nuestros clientes con los clusters de competencia para detectar brechas de oferta y ratings locales.
-
+Cruzamos la ubicación de nuestros clientes con los clusters de competencia para detectar brechas de oferta.
 <table border="0">
  <tr>
     <td><b style="font-size:14px">Exploración de Oferta Exógena</b></td>
@@ -106,23 +107,8 @@ Cruzamos la ubicación de nuestros clientes con los clusters de competencia para
  </tr>
 </table>
 
-### 🧠 Fase C: Modelado Predictivo Avanzado
-Transformamos datos en predicciones financieras y segmentos psicográficos de alta fidelidad.
-
-<table border="0">
- <tr>
-    <td><b style="font-size:14px">Performance XGBoost (R² : 0.85)</b></td>
-    <td><b style="font-size:14px">Clustering K-Means++</b></td>
- </tr>
- <tr>
-    <td><img src="reports/figures/11_regression_analysis.png" width="450"></td>
-    <td><img src="reports/figures/13_clustering_analysis.png" width="450"></td>
- </tr>
-</table>
-
-### 🎯 Fase D: Recomendación e Insights de Mercado
-El resultado final permite al negocio ofrecer el producto ideal al cliente correcto en el momento preciso.
-
+### 🎯 Fase C: Entrega de Valor y Recomendación
+El resultado final permite al negocio ofrecer el producto ideal al cliente correcto.
 <table border="0">
  <tr>
     <td><b style="font-size:14px">Motor de Recomendación 360°</b></td>
@@ -136,68 +122,61 @@ El resultado final permite al negocio ofrecer el producto ideal al cliente corre
 
 ---
 
+## 🧹 Ingeniería de Datos y Calidad
+
+Hemos implementado un pipeline de limpieza robusto en `src/data` que maneja:
+*   **Imputación Inteligente**: Uso de medianas condicionadas por estrato socioeconómico.
+*   **Validación de Esquemas**: Aseguramos que los datos de entrada cumplan los tipos estadísticos necesarios.
+*   **Tratamiento de Outliers**: Limpieza de valores extremos en ingresos y gastos para no sesgar los modelos.
+
+---
+
+## 🧠 Inteligencia Predictiva y ML
+
+### Predicción de Gasto (XGBoost)
+Logramos un **R² de 0.85**, permitiendo proyecciones financieras de alta fidelidad basadas en el perfil socioeconómico.
+<p align="center">
+  <img src="reports/figures/11_regression_analysis.png" width="700">
+</p>
+
+### Segmentación Psicotográfica (K-Means++)
+Identificamos 4 arquetipos de clientes para personalizar la comunicación de marketing.
+<p align="center">
+  <img src="reports/figures/13_clustering_analysis.png" width="700">
+</p>
+
+---
+
 ## 🌆 Caso de Éxito: Mercado Miami
 
-El análisis reveló que Miami es el hub de mayor margen potencial. Detectamos una saturación de oferta "Premium" (Yelp $$$), pero una oportunidad masiva en el segmento "Casual Quality", donde nuestros clientes tienen la mayor disposición al gasto.
-
+Miami es nuestro hub de mayor margen potencial. El análisis detectó una brecha significativa: existe una saturación de oferta "Premium", pero una oportunidad masiva en el segmento "Casual Quality" para nuestros clientes.
 <p align="center">
   <img src="reports/figures/05_miami_vs_nacional.png" width="700">
 </p>
 
 ---
 
-## 📊 Resultados y Dashboard Ejecutivo de Impacto
+## 📊 Resultados y Dashboard Ejecutivo
 
 Consolidamos toda la inteligencia en un tablero de mando que permite a la dirección actuar de inmediato sobre los segmentos de mayor valor.
 
 <p align="center">
   <img src="reports/figures/15_executive_dashboard.png" width="900">
   <br>
-  <i>Figura 1: Dashboard Ejecutivo — Consolidación de Inteligencia Predictiva y Segmentación.</i>
+  <i>Figura 1: Dashboard Ejecutivo Integral — Consolidación de Inteligencia Predictiva y Segmentación.</i>
 </p>
 
 ---
 
-## 💡 Conclusiones Estratégicas y Hallazgos
+## 💾 Guía de Operación
 
-*   **Fidelidad Predictiva**: Los miembros Premium gastan un **42% más** independientemente de sus ingresos. La lealtad es el mayor motor psicológico detectado.
-*   **Segmentación Elite**: El 15% de la base (Cluster 1) genera el 80% de la rentabilidad.
-*   **Oportunidad Geográfica**: Se identificaron 5 zonas desatendidas donde la oferta de la competencia tiene calificaciones inferiores a 3 estrellas.
-
----
-
-## 🏛️ Arquitectura del Motor (SOLID Engineering)
-
-El sistema ha sido construido bajo principios de ingeniería de software para garantizar su escalabilidad:
-*   **S (Single Responsibility)**: Código modular en `src/` desacoplado por función.
-*   **O (Open/Closed)**: Arquitectura preparada para añadir nuevos modelos sin romper el pipeline.
-*   **D (Dependency Inversion)**: Orquestación centralizada para ejecución sin errores.
+1.  **Instalación**: `pip install -r requirements.txt`
+2.  **Seguridad**: Configurar las API Keys en el archivo `.env`.
+3.  **Ejecución Maestro**: Ejecutar `python run_pipeline.py` para procesar todo de principio a fin automáticamente.
 
 ---
 
-## 💾 Guía de Operación y Master Pipeline
-
-### 1. Preparación del Entorno
-```bash
-pip install -r requirements.txt
-pip install -e .
-```
-
-### 2. Configuración de API Keys (.env)
-```env
-API_KEY=tu_clave_yelp
-CLIENTE_ID=tu_id_yelp
-```
-
-### 3. Ejecución en Un Solo Click
-Ahorra horas de trabajo manual ejecutando el orquestador maestro que procesa todo el flujo analítico:
-```bash
-python run_pipeline.py
-```
-
----
-
-## 🚧 Roadmap Estratégico a 24 Meses
+## 🚧 Roadmap Estratégico
 
 <p align="center">
   <img src="reports/figures/17_roadmap.png" width="800">
