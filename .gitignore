@@ -87,9 +87,12 @@ models/*.h5
 # Reports generados
 reports/*.html
 reports/*.pdf
-reports/figures/*.png
-reports/figures/*.jpg
+# reports/figures/*.png  <-- Permitir estas para el README
+# reports/figures/*.jpg  <-- Permitir estas para el README
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Documentation (Local Only)
+docs/
