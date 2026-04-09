@@ -93,6 +93,3 @@ reports/*.pdf
 # OS
 .DS_Store
 Thumbs.db
-
-# Documentation (Local Only)
-docs/
