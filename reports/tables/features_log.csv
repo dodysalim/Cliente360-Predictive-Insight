@@ -1,0 +1,30 @@
+Feature,Tipo,Descripción
+grupo_etario,Categórica,Segmentación por cohorte etaria (6 grupos)
+generacion,Categórica,Cohorte generacional (Boomer→Alpha)
+es_joven,Binaria,Edad ≤ 35 años
+es_adulto,Binaria,35 < Edad ≤ 55 años
+es_senior,Binaria,Edad > 55 años
+es_masculino,Binaria,Género masculino (1=Sí)
+ingresos_anuales,Numérica,Ingresos × 12
+categoria_ingreso,Categórica,Cuartil de ingresos
+ratio_gasto_ingreso,Numérica,Gasto / Ingreso mensual
+ltv_mensual,Numérica,Gasto × Frecuencia mensual
+ltv_anual,Numérica,LTV proyectado a 12 meses
+log_ingresos_mensuales,Numérica,log(1 + ingresos_mensuales) — normaliza distribución
+estrato_num,Ordinal,"Estrato NSE codificado (1=Bajo, 4=Muy Alto)"
+frecuencia_categoria,Categórica,Categoría de frecuencia de visita
+es_visitante_frecuente,Binaria,Frecuencia > mediana (1=Sí)
+es_premium,Binaria,Membresía premium activa
+pago_digital,Binaria,Usa método de pago digital
+consume_licor_bin,Binaria,Consume licor (mayor ticket promedio)
+engagement_score,Numérica,"Score compuesto [0,1] — índice de engagement"
+engagement_categoria,Categórica,Categoría de engagement (Bajo→VIP)
+es_vegetariano,Binaria,Keywords: ['vegetar']
+es_vegano,Binaria,"Keywords: ['vegano', 'vegan']"
+es_carnivoro,Binaria,"Keywords: ['carne', 'carnivor', 'meat']"
+pref_mariscos,Binaria,"Keywords: ['marisco', 'seafood', 'pescado']"
+preferencia_encoded,Ordinal,Label encoding de preferencia
+es_miami,Binaria,Reside en Miami (mercado objetivo)
+es_ciudad_top5,Binaria,Reside en una de las 5 ciudades principales
+ratio_mercado_ciudad,Numérica,Ratio Clientes/Restaurantes en su ciudad
+rating_prom_ciudad,Numérica,Rating promedio de restaurantes en su ciudad

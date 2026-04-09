@@ -1,0 +1,50 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║           REPORTE EJECUTIVO — INSIGHTREACH ANALYTICS                        ║
+║           Proyecto: Conociendo al Cliente 360°                              ║
+║           Autor: Dody Dueñas  |  Fecha: 2026-04-09  |  v2.0           ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. RESUMEN EJECUTIVO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Este proyecto analizó 30,000 clientes de InsightReach utilizando técnicas
+avanzadas de Machine Learning para responder las preguntas estratégicas del negocio:
+
+  • ¿Quiénes son nuestros clientes?     → 2 segmentos identificados en 10 ciudades
+  • ¿Cuánto gastan y con qué frecuencia?→ $32.60 promedio / 4.3x/mes
+  • ¿Donde están las oportunidades?     → Brechas geográficas + nicho plant-based
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. HALLAZGOS PRINCIPALES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  H-01: Solo 42.8% de clientes son Premium — alto potencial de conversión
+  H-02: 34.1% demanda plant-based — oferta de Yelp no lo refleja (brecha)
+  H-03: Ingresos y frecuencia son los mejores predictores de gasto (importancia RF top-2)
+  H-04: El modelo predictivo (XGBoost/GBM) alcanza R² > 0.80 en validación cruzada
+  H-05: Ciudades con ratio CLI/REST > 5x representan territorio de alta oportunidad
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. PROXIMOS PASOS INMEDIATOS (30 días)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Integrar clusters en CRM para activar campañas segmentadas
+  2. Lanzar campaña de conversión Premium al segmento engagement > 0.7
+  3. Desarrollar guía curada plant-based para el 34.1% de clientes veganos/vegetarianos
+  4. Exponer modelo predictivo como API REST para scoring en tiempo real
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. ARTEFACTOS GENERADOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📊 Figuras: reports/figures/ (01–17)
+  📋 Tablas : reports/tables/ (model_comparison, market_comparison, recommendations)
+  🤖 Modelos: models/ (regression, clustering, recommender)
+  📂 Datos  : data/processed/ (clean, features, clusters, yelp, market)
+
+══════════════════════════════════════════════════════════════════════════════
+Generado: 2026-04-09 12:58:59
+Bootcamp Data Science — Henry | Dody Dueñas | Abril 2026
+══════════════════════════════════════════════════════════════════════════════

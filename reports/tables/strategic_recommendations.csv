@@ -1,0 +1,6 @@
+ID,Prioridad,Área,Descripción,Impacto,Plazo
+R-01,🔴 CRÍTICA,🎯 Segmentación Diferenciada,Activar campañas personalizadas para cada uno de los 2 segmentos identificados.,Incremento de conversión estimado: +25%,30-60 días
+R-02,🔴 CRÍTICA,💎 Conversión Premium,Solo el 42.8% son premium. Meta: duplicar en 6 meses.,Duplicar premium: +$780315 LTV incremental/mes,60-90 días
+R-03,🟡 ALTA,🌱 Nicho Plant-Based,34.1% de clientes son vegetarianos/veganos. Mercado subestimado.,"10,231 clientes con propuesta diferenciada",45-75 días
+R-04,🟡 ALTA,🗺️ Expansión Geográfica,Priorizar ciudades con ratio Clientes/Restaurantes > 5x.,Nuevos mercados con baja competencia y alta demanda,90-120 días
+R-05,🟢 MEDIA,🤖 IA y Personalización,Integrar el modelo predictivo en el flujo de comunicación diario.,"Automatización del 80% del scoring de 30,000 clientes",120-180 días
