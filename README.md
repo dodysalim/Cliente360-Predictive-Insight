@@ -213,13 +213,6 @@ Consolidamos toda la inteligencia en un tablero de mando que resume el estado de
 
 ---
 
-## 🚧 Roadmap Estratégico
-
-<p align="center">
-  <img src="reports/figures/17_roadmap.png" width="800">
-</p>
-
----
 
 ## 👤 Autor y Contacto
 
