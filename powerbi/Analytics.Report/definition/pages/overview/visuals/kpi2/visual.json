@@ -153,10 +153,10 @@
                       "Entity": "Analytics"
                     }
                   },
-                  "Property": "LTVEstimado"
+                  "Property": "KPI_LTVEstimado"
                 }
               },
-              "queryRef": "Analytics.LTVEstimado",
+              "queryRef": "Analytics.KPI_LTVEstimado",
               "nativeQueryRef": "LTVEstimado",
               "displayName": "LTVEstimado",
               "format": "#,0"

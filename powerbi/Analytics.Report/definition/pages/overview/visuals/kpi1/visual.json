@@ -153,10 +153,10 @@
                       "Entity": "Analytics"
                     }
                   },
-                  "Property": "IngresoPromedio"
+                  "Property": "KPI_IngresoPromedio"
                 }
               },
-              "queryRef": "Analytics.IngresoPromedio",
+              "queryRef": "Analytics.KPI_IngresoPromedio",
               "nativeQueryRef": "IngresoPromedio",
               "displayName": "IngresoPromedio",
               "format": "#,0"

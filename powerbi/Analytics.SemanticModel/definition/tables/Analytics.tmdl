@@ -25,15 +25,15 @@ table Analytics
 		summarizeBy: none
 		sourceColumn: LTVEstimado
 
-	measure Clientes = SUM(Analytics[Clientes])
+	measure KPI_Clientes = SUM(Analytics[Clientes])
 		formatString: #,0.00
 		displayFolder: KPIs
 
-	measure IngresoPromedio = DIVIDE(SUMX(Analytics, Analytics[IngresoPromedio] * Analytics[Clientes]), SUM(Analytics[Clientes]))
+	measure KPI_IngresoPromedio = DIVIDE(SUMX(Analytics, Analytics[IngresoPromedio] * Analytics[Clientes]), SUM(Analytics[Clientes]))
 		formatString: #,0.00
 		displayFolder: KPIs
 
-	measure LTVEstimado = SUM(Analytics[LTVEstimado])
+	measure KPI_LTVEstimado = SUM(Analytics[LTVEstimado])
 		formatString: #,0.00
 		displayFolder: KPIs
 

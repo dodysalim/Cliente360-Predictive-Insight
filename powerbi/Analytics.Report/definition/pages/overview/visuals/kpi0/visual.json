@@ -153,10 +153,10 @@
                       "Entity": "Analytics"
                     }
                   },
-                  "Property": "Clientes"
+                  "Property": "KPI_Clientes"
                 }
               },
-              "queryRef": "Analytics.Clientes",
+              "queryRef": "Analytics.KPI_Clientes",
               "nativeQueryRef": "Clientes",
               "displayName": "Clientes",
               "format": "#,0"
