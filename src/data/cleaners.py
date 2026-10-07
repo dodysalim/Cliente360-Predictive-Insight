@@ -153,7 +153,7 @@ class CustomerDataCleaner(DataCleaner):
         # Edad: imputar con mediana
         if 'edad' in df.columns:
             median_age = df['edad'].median()
-            df['edad'].fillna(median_age, inplace=True)
+            df['edad'] = df['edad'].fillna(median_age)
 
         # Categóricas: imputar con 'Desconocido'
         for col in self.categorical_columns:
@@ -163,7 +163,7 @@ class CustomerDataCleaner(DataCleaner):
         # Numéricas: imputar con 0 o mediana según el caso
         for col in ['frecuencia_visita', 'promedio_gasto_comida']:
             if col in df.columns:
-                df[col].fillna(0, inplace=True)
+                df[col] = df[col].fillna(0)
 
         # Correos y teléfonos: permitir nulos
         if 'correo_electronico' in df.columns:

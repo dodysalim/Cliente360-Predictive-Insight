@@ -29,6 +29,8 @@ class SpendingPredictor(RegressionModel):
         random_state: int = 42,
         **kwargs
     ):
+        if algorithm not in {'xgboost', 'random_forest', 'gradient_boosting', 'ridge', 'lasso'}:
+            raise ValueError(f"Algoritmo de regresión no soportado: {algorithm}")
         self.algorithm = algorithm
         self.model_params = kwargs
         model_name = f"spending_predictor_{algorithm}"

@@ -3,7 +3,8 @@ import pytest
 import pandas as pd
 from pathlib import Path
 
-from src.data.loaders import CustomerDataLoader, CustomerDataCleaner
+from src.data.loaders import CustomerDataLoader
+from src.data.cleaners import CustomerDataCleaner
 
 
 class TestCustomerDataLoader:
@@ -15,8 +16,8 @@ class TestCustomerDataLoader:
         df_clean = cleaner.clean(sample_customer_data)
 
         # Verificar que se crearon features
-        assert 'edad_grupo' in df_clean.columns
-        assert 'grupo_edad' in df_clean.columns or 'edad_grupo' in df_clean.columns
+        assert 'grupo_edad' in df_clean.columns
+        assert df_clean['grupo_edad'].notna().all()
 
     def test_cleaner_handles_nulls(self, sample_customer_data):
         """Test manejo de nulos."""
