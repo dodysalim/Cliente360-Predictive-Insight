@@ -1,0 +1,48 @@
+table Analytics
+
+	column Ciudad
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Ciudad
+
+	column Segmento
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Segmento
+
+	column Clientes
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Clientes
+
+	column IngresoPromedio
+		dataType: double
+		summarizeBy: none
+		sourceColumn: IngresoPromedio
+
+	column LTVEstimado
+		dataType: double
+		summarizeBy: none
+		sourceColumn: LTVEstimado
+
+	measure Clientes = SUM(Analytics[Clientes])
+		formatString: #,0.00
+		displayFolder: KPIs
+
+	measure IngresoPromedio = DIVIDE(SUMX(Analytics, Analytics[IngresoPromedio] * Analytics[Clientes]), SUM(Analytics[Clientes]))
+		formatString: #,0.00
+		displayFolder: KPIs
+
+	measure LTVEstimado = SUM(Analytics[LTVEstimado])
+		formatString: #,0.00
+		displayFolder: KPIs
+
+	partition Analytics = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataFolder & "analytics.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Headers, {{"Ciudad", type text}, {"Segmento", type text}, {"Clientes", Int64.Type}, {"IngresoPromedio", type number}, {"LTVEstimado", type number}}, "en-US")
+			in
+			    Typed
