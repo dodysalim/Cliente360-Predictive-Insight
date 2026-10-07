@@ -9,6 +9,8 @@ PROJECT_ROOT = Path(__file__).parent.resolve()
 NOTEBOOKS_DIR = PROJECT_ROOT / "notebooks"
 LOGS_DIR = PROJECT_ROOT / "logs"
 LOGS_DIR.mkdir(exist_ok=True)
+EXECUTED_DIR = PROJECT_ROOT / "reports" / "executed_notebooks"
+EXECUTED_DIR.mkdir(parents=True, exist_ok=True)
 
 def run_notebook(nb_name):
     nb_path = NOTEBOOKS_DIR / nb_name
@@ -22,7 +24,7 @@ def run_notebook(nb_name):
     
     try:
         ep.preprocess(nb, {'metadata': {'path': str(PROJECT_ROOT)}})
-        with open(nb_path, 'w', encoding='utf-8') as f:
+        with open(EXECUTED_DIR / nb_name, 'w', encoding='utf-8') as f:
             nbformat.write(nb, f)
         elapsed = time.time() - start_time
         print(f"EXITO: {nb_name} ({elapsed:.1f}s)")

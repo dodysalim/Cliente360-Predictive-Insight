@@ -1,6 +1,28 @@
+# Cliente360 · Segmentación de clientes
+
+Proyecto académico que integra limpieza, características, regresión, segmentación y análisis de mercado.
+
+**Para revisar:** `notebooks, src/data, src/models, reports/tables`.
+
+**Contexto:** Las recomendaciones provienen del análisis del dataset. No se demuestra impacto comercial realizado.
+
+## Inicio
+
+Desde la raíz del repositorio, en un entorno virtual con sus datos disponibles:
+
+```bash
+python -m pip install -e ".[dev,notebooks]"
+```
+
+Consulta [el caso de proyecto](docs/PORTFOLIO_CASE.md) para el alcance y los criterios de revisión.
+
+---
+
+## Documentación detallada existente
+
 # 💎 Cliente360° — InsightReach Analytics
 ## Plataforma de Inteligencia Predictiva, Segmentación Estratégica y Optimización de Mercado
-### *Proyecto Integrador de Nivel Senior Empresarial — Henry Bootcamp*
+### *Proyecto integrador académico — Henry Bootcamp*
 
 ---
 
@@ -9,7 +31,7 @@
 1.  [📌 Resumen Ejecutivo de Alta Dirección](#-resumen-ejecutivo-de-alta-dirección)
 2.  [🎯 El Desafío de Negocio: Visión 360°](#-el-desafío-de-negocio-visión-360)
 3.  [🌳 Estructura Completa de Activos y Gobernanza](#-estructura-completa-de-activos-y-gobernanza)
-4.  [🛠️ Metodología de Implementación: CRISP-DM Senior](#-metodología-de-implementación-crisp-dm-senior)
+4.  [🛠️ Metodología de Implementación: CRISP-DM](#-metodología-de-implementación-crisp-dm-senior)
 5.  [🏛️ Arquitectura del Motor (SOLID Engineering)](#-arquitectura-del-motor-solid-engineering)
 6.  [🔍 Walkthrough Visual: Flujo de Valor](#-walkthrough-visual-flujo-de-valor)
 7.  [🧹 Ingeniería de Datos y Calidad](#-ingeniería-de-datos-y-calidad)
@@ -84,7 +106,7 @@ Proyecto_Integrador_Dody_Empresarial/
 
 ---
 
-## 🛠️ Metodología de Implementación: CRISP-DM Senior
+## 🛠️ Metodología de Implementación: CRISP-DM
 
 El proyecto sigue el estándar **CRISP-DM** mejorado para entornos empresariales:
 1.  **Business Understanding**: Alineación de métricas con objetivos financieros.
