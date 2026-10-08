@@ -3,5 +3,7 @@ model Model
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	sourceQueryCulture: en-US
 
-ref table Analytics
+ref table Clientes
+ref table Restaurantes
+ref table Importancia
 ref expression DataFolder

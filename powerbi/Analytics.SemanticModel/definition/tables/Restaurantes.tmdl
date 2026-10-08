@@ -1,0 +1,48 @@
+table Restaurantes
+
+	column 'name'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: name
+
+	column 'city'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: city
+
+	column 'price'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: price
+
+	column 'rating'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: rating
+
+	column 'review_count'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: review_count
+
+	measure KPI_Restaurantes = COUNTROWS(Restaurantes)
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	measure KPI_Rating = AVERAGE(Restaurantes[rating])
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	measure KPI_Reviews = SUM(Restaurantes[review_count])
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	partition Restaurantes = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Restaurantes.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"name", type text}, {"city", type text}, {"price", type text}, {"rating", type number}, {"review_count", type number}}, "en-US")
+				in
+				    Typed

@@ -1,0 +1,11 @@
+{
+  "repo": "Cliente360-Predictive-Insight",
+  "pages": 5,
+  "visuals": 49,
+  "tables": {
+    "Clientes": 30000,
+    "Restaurantes": 200,
+    "Importancia": 20
+  },
+  "status": "30.000 clientes del dataset del proyecto · LTV estimado · exportación sin nombres, teléfono ni correo"
+}

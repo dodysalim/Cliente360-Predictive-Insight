@@ -1,4 +1,2 @@
-expression DataFolder = "C:\Data\Cliente360-Predictive-Insight\powerbi\data\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression DataFolder = "C:\Dody-PowerBI\Cliente360-Predictive-Insight\powerbi\data\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	kind: m
-
-	annotation PBI_ResultType = Text

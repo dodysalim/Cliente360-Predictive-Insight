@@ -1,0 +1,86 @@
+table Clientes
+
+	column 'ciudad_residencia'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ciudad_residencia
+
+	column 'edad'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: edad
+
+	column 'genero'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: genero
+
+	column 'grupo_edad'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: grupo_edad
+
+	column 'cluster_nombre'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: cluster_nombre
+
+	column 'ingresos_mensuales'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: ingresos_mensuales
+
+	column 'promedio_gasto_comida'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: promedio_gasto_comida
+
+	column 'ltv_anual'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: ltv_anual
+
+	column 'engagement_score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: engagement_score
+
+	column 'frecuencia_categoria'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: frecuencia_categoria
+
+	column 'membresia_premium'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: membresia_premium
+
+	measure KPI_Clientes = COUNTROWS(Clientes)
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	measure KPI_Ingreso = AVERAGE(Clientes[ingresos_mensuales])
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	measure KPI_LTV = SUM(Clientes[ltv_anual])
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	measure KPI_Engagement = AVERAGE(Clientes[engagement_score])
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	measure KPI_Gasto = AVERAGE(Clientes[promedio_gasto_comida])
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	partition Clientes = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Clientes.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"ciudad_residencia", type text}, {"edad", type number}, {"genero", type text}, {"grupo_edad", type text}, {"cluster_nombre", type text}, {"ingresos_mensuales", type number}, {"promedio_gasto_comida", type number}, {"ltv_anual", type number}, {"engagement_score", type number}, {"frecuencia_categoria", type text}, {"membresia_premium", type text}}, "en-US")
+				in
+				    Typed
