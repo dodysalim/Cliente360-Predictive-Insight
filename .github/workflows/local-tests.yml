@@ -14,5 +14,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install pytest pandas numpy scipy scikit-learn requests requests-toolbelt python-dotenv pyyaml pydantic joblib
+      - run: python -m pip install pytest pandas numpy scipy scikit-learn requests requests-toolbelt python-dotenv pyyaml pydantic joblib xgboost matplotlib seaborn
       - run: python -m pytest tests -q
