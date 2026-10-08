@@ -1,250 +1,74 @@
-# Cliente360 · Segmentación de clientes
+![Cliente360](docs/cover.svg)
 
-Proyecto académico que integra limpieza, características, regresión, segmentación y análisis de mercado.
+# Cliente360
 
-**Para revisar:** `notebooks, src/data, src/models, reports/tables`.
+**Limpieza, segmentación y modelos para explorar clientes y oportunidades de mercado.**
 
-**Contexto:** Las recomendaciones provienen del análisis del dataset. No se demuestra impacto comercial realizado.
+HENRY · PROYECTO INTEGRADOR · Python · pandas · scikit-learn · Power BI
 
-## Inicio
+[Portafolio](https://dodysalim.github.io/) · [Caso y alcance](docs/PORTFOLIO_CASE.md) · [Verificación](docs/VALIDATION.md)
 
-Desde la raíz del repositorio, en un entorno virtual con sus datos disponibles:
+## La pregunta
 
-```bash
-python -m pip install -e ".[dev,notebooks]"
-```
+¿Qué perfiles aparecen entre los clientes y qué conclusiones permite realmente la cobertura de los datos?
 
-Consulta [el caso de proyecto](docs/PORTFOLIO_CASE.md) para el alcance y los criterios de revisión.
+## Qué puedes revisar
 
----
+- ETL, ingeniería de características, regresión y clustering.
+- Notebooks por etapa, comparativas de modelos y tablas procesadas.
+- Informe ejecutivo y dashboard Power BI con cinco páginas.
 
-## Documentación detallada existente
+## Inicio local
 
-# 💎 Cliente360° — InsightReach Analytics
-## Plataforma de Inteligencia Predictiva, Segmentación Estratégica y Optimización de Mercado
-### *Proyecto integrador académico — Henry Bootcamp*
-
----
-
-## 📑 Índice de Contenidos
-
-1.  [📌 Resumen Ejecutivo de Alta Dirección](#-resumen-ejecutivo-de-alta-dirección)
-2.  [🎯 El Desafío de Negocio: Visión 360°](#-el-desafío-de-negocio-visión-360)
-3.  [🌳 Estructura Completa de Activos y Gobernanza](#-estructura-completa-de-activos-y-gobernanza)
-4.  [🛠️ Metodología de Implementación: CRISP-DM](#-metodología-de-implementación-crisp-dm-senior)
-5.  [🏛️ Arquitectura del Motor (SOLID Engineering)](#-arquitectura-del-motor-solid-engineering)
-6.  [🔍 Walkthrough Visual: Flujo de Valor](#-walkthrough-visual-flujo-de-valor)
-7.  [🧹 Ingeniería de Datos y Calidad](#-ingeniería-de-datos-y-calidad)
-8.  [🧠 Inteligencia Predictiva y ML](#-inteligencia-predictiva-y-ml)
-9.  [🌆 Caso de Éxito: Mercado Miami](#-caso-de-éxito-mercado-miami)
-10. [📊 Resultados y Dashboard Ejecutivo](#-resultados-y-dashboard-ejecutivo)
-11. [💾 Guía de Operación](#-guía-de-operación)
-12. [🚧 Roadmap Estratégico](#-roadmap-estratégico)
-13. [👤 Autor y Contacto](#-autor-y-contacto)
-
----
-
-## 📌 Resumen Ejecutivo de Alta Dirección
-
-**Cliente360°** representa la culminación de un proceso de ingeniería de datos y ciencia de datos aplicada a la resolución de problemas complejos de crecimiento corporativo. El sistema utiliza una triada de **ML Supervisado**, **ML No Supervisado** e **Inteligencia Geo-espacial** (Yelp Fusion API) para extraer valor accionable del comportamiento de los consumidores.
-
----
-
-## 🎯 El Desafío de Negocio: Visión 360°
-
-La organización enfrentaba problemas de **Ceguera Transaccional**, **Marketing Ineficiente** y **Desconexión con el Entorno**. Este proyecto aborda estos retos mediante:
-*   **Predicción de gasto**: XGBoost con **R² 0.45** y error medio de USD 13.7 (33% menos que el baseline), tras corregir una fuga de datos.
-*   **Eficiencia en Marketing**: Segmentación algorítmica para optimizar el CAC.
-*   **Geomarketing**: Identificación de brechas de oferta externa en ciudades clave.
-
----
-
-## 🌳 Estructura Completa de Activos y Gobernanza
-
-A continuación se detalla la **arquitectura integral del repositorio**, diseñada para garantizar la trazabilidad y el escalamiento del sistema:
+Usa Python 3.11 o 3.12 en un entorno independiente. Desde la raíz:
 
 ```bash
-Proyecto_Integrador_Dody_Empresarial/
-├── config/                     # ⚙️ NÚCLEO DE CONFIGURACIÓN
-│   ├── settings.py             # Parámetros globales y credenciales.
-│   └── logging_config.yaml     # Estrategia de trazabilidad industrial.
-├── data/                       # 📂 GESTIÓN DE DATOS (DATA LAKE)
-│   ├── raw/                    # Datos fuente originales e inmutables.
-│   ├── external/               # Ingestas de API de terceros.
-│   ├── interim/                # Estado intermedio de transformaciones.
-│   └── processed/              # Datasets finales "Gold Standard" para ML.
-├── notebooks/                  # 📊 REPORTES ANALÍTICOS EJECUTIVOS
-│   ├── 01_eda.ipynb            # Diagnóstico senior y auditoría visual.
-│   ├── 02_api.ipynb            # Enriquecimiento via Yelp Fusion.
-│   ├── 03_features.ipynb       # Laboratorio de ingeniería de señales.
-│   ├── 04_modeling.ipynb       # Evaluación multicapa de algoritmos.
-│   └── 05_insights.ipynb       # Dashboard e inteligencia de mercado.
-├── src/                        # 🛠️ MOTOR DEL SISTEMA (CORE ENGINE)
-│   ├── api/                    # Cliente HTTP y parsers para Yelp.
-│   │   ├── client.py
-│   │   └── parsers.py
-│   ├── data/                   # Limpieza y validación robusta.
-│   │   ├── cleaners.py
-│   │   └── loaders.py
-│   ├── features/               # Transformadores de variables.
-│   │   └── builders.py
-│   ├── models/                 # Lógica de entrenamiento y recomendación.
-│   │   ├── regression.py
-│   │   ├── segmentation.py
-│   │   └── recommender.py
-│   └── utils/                  # Logger y excepciones personalizadas.
-├── reports/                    # 📈 OUTPUTS ESTRATÉGICOS
-│   ├── figures/                # Galería de visualizaciones de alta calidad.
-│   └── tables/                 # Resúmenes ejecutivos en CSV.
-├── scripts/                    # 🚀 SCRIPTS EJECUTABLES
-│   ├── run_etl.py              # Ejecución aislada de la tubería de datos.
-│   └── run_training.py         # Orquestación de entrenamiento ML.
-├── run_pipeline.py             # 🔥 MASTER RUNNER (Automatización Total)
-├── requirements.txt            # Contrato de dependencias.
-└── setup.py                    # Metadata de empaquetado profesional.
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+python -m pip install -r requirements.txt
 ```
 
----
+Después de configurar los datos:
 
-## 🛠️ Metodología de Implementación: CRISP-DM
+```bash
+python -m pytest tests -q
+# Para ejecutar los notebooks completos, con sus datos disponibles:
+python run_pipeline.py
+```
 
-El proyecto sigue el estándar **CRISP-DM** mejorado para entornos empresariales:
-1.  **Business Understanding**: Alineación de métricas con objetivos financieros.
-2.  **Data Understanding**: Auditoría profunda de 25+ campos (NB 01).
-3.  **Preparation**: Pipelines automatizados de limpieza y normalización.
-4.  **Modeling**: Entrenamiento competitivo de XGBoost y K-Means++.
-5.  **Evaluation**: Validación cruzada para asegurar generalización.
-6.  **Deployment**: Orquestación maestro vía `run_pipeline.py`.
+## Datos y configuración
 
----
+Datos y resultados procesados presentes. La cobertura de Yelp utilizada en Power BI corresponde a Miami, con 200 establecimientos únicos; no permite comparar otras ciudades con Yelp.
 
-## 🏛️ Arquitectura del Motor (SOLID Engineering)
+## Power BI · PC y móvil
 
-El motor analítico ha sido construido bajo principios de ingeniería de software:
-*   **S (Single Responsibility)**: Código modular desacoplado (ej. `cleaners.py` solo limpia).
-*   **O (Open/Closed)**: Arquitectura preparada para añadir nuevos modelos fácilmente.
-*   **D (Dependency Inversion)**: Orquestación centralizada para ejecución predecible.
+[Archivos e instrucciones](powerbi/README.md). Descarga el repositorio completo y abre `powerbi/Abrir-PowerBI.bat` en Windows; después pulsa **Actualizar**. Incluye A4 horizontal a tamaño real (100 %) y diseño móvil vertical. El archivo `.pbip` necesita sus carpetas Report, SemanticModel y data.
 
----
+## Recorrido por el código
 
-## 🔍 Walkthrough Visual: Flujo de Valor
+| Ruta | Qué contiene |
+| --- | --- |
+| [notebooks/](notebooks/) | Exploración y modelado |
+| [src/](src/) | Componentes del pipeline |
+| [data/processed/](data/processed/) | Resultados procesados |
+| [reports/](reports/) | Tablas, figuras e informe |
+| [tests/](tests/) | Pruebas de carga y regresión |
 
-Detalle paso a paso del proceso analítico generado:
+## Comprobación y alcance
 
-### 📊 Fase A: Diagnóstico de Base Instalada
-<table border="0">
- <tr>
-    <td><b style="font-size:14px">Audit de Integridad</b></td>
-    <td><b style="font-size:14px">Perfilamiento Demográfico</b></td>
- </tr>
- <tr>
-    <td><img src="reports/figures/00_mapa_nulos.png" width="450"></td>
-    <td><img src="reports/figures/01_demografico.png" width="450"></td>
- </tr>
-</table>
+Seis pruebas existentes aprobadas. Las tablas y el modelo Power BI se verificaron en la entrega de BI anterior.
 
-### 🌐 Fase B: Inteligencia de Entorno (Yelp API)
-<table border="0">
- <tr>
-    <td><b style="font-size:14px">Exploración de Oferta Exógena</b></td>
-    <td><b style="font-size:14px">Miami: Categorías, Precios y Mapa</b></td>
- </tr>
- <tr>
-    <td><img src="reports/figures/06_yelp_overview.png" width="450"></td>
-    <td><img src="reports/figures/07_yelp_by_city.png" width="450"></td>
- </tr>
-</table>
+No se volvió a ejecutar aquí la cadena completa de cinco notebooks. Los clientes son datos de formación; no se afirma impacto comercial realizado.
 
-### 🧠 Fase C: Modelado Predictivo y ML
-<table border="0">
- <tr>
-    <td><b style="font-size:14px">Performance XGBoost</b></td>
-    <td><b style="font-size:14px">Clustering K-Means++</b></td>
- </tr>
- <tr>
-    <td><img src="reports/figures/11_regression_analysis.png" width="450"></td>
-    <td><img src="reports/figures/13_clustering_analysis.png" width="450"></td>
- </tr>
-</table>
+Para repetir las pruebas desde la raíz:
 
-### 🎯 Fase D: Selección de Variables y Número de Segmentos
-<table border="0">
- <tr>
-    <td><b style="font-size:14px">Importancia de Variables (sin fuga de datos)</b></td>
-    <td><b style="font-size:14px">Número Óptimo de Clusters</b></td>
- </tr>
- <tr>
-    <td><img src="reports/figures/10_feature_importance.png" width="450"></td>
-    <td><img src="reports/figures/12_optimal_k.png" width="450"></td>
- </tr>
-</table>
+```bash
+python -m pytest tests -q
+```
 
-> **Nota:** Yelp solo tiene datos de Miami, por eso no se incluye un análisis de oferta vs. demanda entre ciudades.
+## Autoría
 
----
+Proyecto académico Henry. Dody Salim Dueñas Remache.
 
-## 🧹 Ingeniería de Datos y Calidad
-
-Hemos implementado un pipeline de limpieza robusto que maneja:
-*   **Imputación Inteligente**: Uso de medianas condicionadas por estrato socioeconómico.
-*   **Validación de Esquemas**: Aseguramos consistencia en los tipos de datos.
-*   **Tratamiento de Outliers**: Limpieza de señales ruidosas para modelos más estables.
-
----
-
-## 🧠 Inteligencia Predictiva y ML
-
-### Predicción de Gasto (XGBoost)
-**R² = 0.45** en el set de prueba (CV 5-fold: 0.44 ± 0.01) y MAE de USD 13.7 frente a USD 20.4 del baseline.
-
-> ⚠️ **Fuga de datos corregida:** la versión inicial alcanzaba un R² de 0.9996 porque usaba `ltv_mensual`, `ratio_gasto_ingreso` y `engagement_score`, que se calculan a partir del gasto que se quiere predecir. Se excluyeron en `ml_pipeline.py` y en el notebook 04.
-<p align="center">
-  <img src="reports/figures/11_regression_analysis.png" width="700">
-</p>
-
-### Segmentación de Clientes (K-Means++)
-El mejor coeficiente de silueta se obtuvo con **k = 2 (0.39)**: un segmento **VIP** (38% de los clientes) que genera ~76% del valor mensual y un segmento de **cliente promedio** (62%).
-<p align="center">
-  <img src="reports/figures/13_clustering_analysis.png" width="700">
-</p>
-
----
-
-## 🌆 Caso de Éxito: Mercado Miami
-
-Se analizaron 200 restaurantes únicos de Miami con la API de Yelp (463 registros, porque cada local aparece en varias categorías): rating promedio de 4.34 y solo 3 por debajo de 3.5 estrellas. Es un mercado competido y bien valorado, donde conviene diferenciarse por precio o experiencia.
-<p align="center">
-  <img src="reports/figures/05_miami_vs_nacional.png" width="700">
-</p>
-
----
-
-## 📊 Resultados y Dashboard Ejecutivo
-
-Consolidamos toda la inteligencia en un tablero de mando que resume el estado del negocio.
-
-<p align="center">
-  <img src="reports/figures/15_executive_dashboard.png" width="900">
-  <br>
-  <i>Figura 1: Dashboard Ejecutivo Integral — Consolidación de Inteligencia Predictiva y Segmentación.</i>
-</p>
-
----
-
-## 💾 Guía de Operación
-
-1.  **Instalación**: `pip install -r requirements.txt`
-2.  **Seguridad**: Configurar las API Keys en el archivo `.env`.
-3.  **Ejecución Maestro**: Ejecutar `python run_pipeline.py` para automatización total.
-
----
-
-
-## 👤 Autor y Contacto
-
-**Dody Dueñas**  
-*Data Scientist & Analytics Architect*  
-*Henry Bootcamp*
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dody-duenas/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dodysalim)
+[Documentación anterior](docs/ORIGINAL_README.md), conservada como referencia histórica.
