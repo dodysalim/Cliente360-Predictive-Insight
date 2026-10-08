@@ -5,7 +5,7 @@
 ---
 
 ## 📑 Resumen del Proyecto
-Este reporte resume los hallazgos del pipeline analítico sobre **30,000 clientes** de restaurantes en EE. UU., enriquecido con **463 restaurantes de Miami** obtenidos de la API de Yelp. Todos los números provienen de los notebooks `04_modeling` y `05_insights_and_recommendations`.
+Este reporte resume los hallazgos del pipeline analítico sobre **30,000 clientes** de restaurantes en EE. UU., enriquecido con **200 restaurantes únicos de Miami** obtenidos de la API de Yelp. Todos los números provienen de los notebooks `04_modeling` y `05_insights_and_recommendations`.
 
 ---
 
@@ -16,14 +16,14 @@ Este reporte resume los hallazgos del pipeline analítico sobre **30,000 cliente
 *   Las variables más útiles son los **ingresos mensuales** y la **frecuencia de visita**.
 *   **Diferencial Premium**: los clientes con membresía gastan en promedio **USD 47.5 por visita, frente a USD 21.5** de los usuarios estándar (**+121%**).
 
-> ⚠️ **Lección aprendida (fuga de datos):** la primera versión del modelo obtenía un R² de 0.9996 porque usaba como entradas `ltv_mensual` (gasto × frecuencia), `ratio_gasto_ingreso` (gasto ÷ ingresos) y `engagement_score` (que incluye el gasto). Esas variables se calculan **a partir del valor que se quiere predecir**, así que se excluyeron. El R² de 0.45 es el rendimiento real.
+> ⚠️ **Lección aprendida (fuga de datos):** la primera versión del modelo obtenía un R² de 0.9996 porque usaba como entradas `ltv_mensual` y `ltv_anual` (gasto × frecuencia), `ratio_gasto_ingreso` (gasto ÷ ingresos), `gasto_por_visita` y `engagement_score` (que incluye el gasto). Esas variables se calculan **a partir del valor que se quiere predecir**, así que se excluyeron. El R² de 0.45 es el rendimiento real.
 
 ![Análisis de Regresión](../reports/figures/11_regression_analysis.png)
 *Figura 1: Predicción vs gasto real.*
 
 ### 🌆 Mercado de Miami (API de Yelp)
 *   El **10.6%** de los clientes vive en Miami.
-*   Los 463 restaurantes de Miami obtenidos de Yelp tienen un **rating promedio de 4.34** (σ = 0.33) y solo 6 están por debajo de 3.5 estrellas: es un mercado **competido y de buena calidad**, no de oferta deficiente.
+*   Los 200 restaurantes únicos de Miami obtenidos de Yelp (463 registros, porque cada local aparece en varias categorías) tienen un **rating promedio de 4.34** (σ = 0.34) y solo 3 están por debajo de 3.5 estrellas: es un mercado **competido y de buena calidad**, no de oferta deficiente.
 
 ![Mercado Miami](../reports/figures/05_miami_vs_nacional.png)
 *Figura 2: Comparativa Miami frente al promedio nacional.*

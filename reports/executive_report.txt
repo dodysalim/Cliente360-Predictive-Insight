@@ -45,6 +45,6 @@ avanzadas de Machine Learning para responder las preguntas estratégicas del neg
   📂 Datos  : data/processed/ (clean, features, clusters, yelp, market)
 
 ══════════════════════════════════════════════════════════════════════════════
-Generado: 2026-10-07 19:18:13
+Generado: 2026-10-07 20:01:01
 Bootcamp Data Science — Henry | Dody Dueñas | Abril 2026
 ══════════════════════════════════════════════════════════════════════════════

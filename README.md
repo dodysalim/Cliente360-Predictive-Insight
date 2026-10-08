@@ -147,11 +147,11 @@ Detalle paso a paso del proceso analítico generado:
 <table border="0">
  <tr>
     <td><b style="font-size:14px">Exploración de Oferta Exógena</b></td>
-    <td><b style="font-size:14px">Cruce Oferta vs. Demanda</b></td>
+    <td><b style="font-size:14px">Miami: Categorías, Precios y Mapa</b></td>
  </tr>
  <tr>
     <td><img src="reports/figures/06_yelp_overview.png" width="450"></td>
-    <td><img src="reports/figures/08_offer_demand.png" width="450"></td>
+    <td><img src="reports/figures/07_yelp_by_city.png" width="450"></td>
  </tr>
 </table>
 
@@ -167,17 +167,19 @@ Detalle paso a paso del proceso analítico generado:
  </tr>
 </table>
 
-### 🎯 Fase D: Recomendación e Insights de Mercado
+### 🎯 Fase D: Selección de Variables y Número de Segmentos
 <table border="0">
  <tr>
-    <td><b style="font-size:14px">Motor de Recomendación 360°</b></td>
-    <td><b style="font-size:14px">Oportunidades de Expansión</b></td>
+    <td><b style="font-size:14px">Importancia de Variables (sin fuga de datos)</b></td>
+    <td><b style="font-size:14px">Número Óptimo de Clusters</b></td>
  </tr>
  <tr>
-    <td><img src="reports/figures/14_recommender.png" width="450"></td>
-    <td><img src="reports/figures/16_market_opportunities.png" width="450"></td>
+    <td><img src="reports/figures/10_feature_importance.png" width="450"></td>
+    <td><img src="reports/figures/12_optimal_k.png" width="450"></td>
  </tr>
 </table>
+
+> **Nota:** Yelp solo tiene datos de Miami, por eso no se incluye un análisis de oferta vs. demanda entre ciudades.
 
 ---
 
@@ -210,7 +212,7 @@ El mejor coeficiente de silueta se obtuvo con **k = 2 (0.39)**: un segmento **VI
 
 ## 🌆 Caso de Éxito: Mercado Miami
 
-Se analizaron 463 restaurantes de Miami con la API de Yelp: rating promedio de 4.34 y solo 6 por debajo de 3.5 estrellas. Es un mercado competido y bien valorado, donde conviene diferenciarse por precio o experiencia.
+Se analizaron 200 restaurantes únicos de Miami con la API de Yelp (463 registros, porque cada local aparece en varias categorías): rating promedio de 4.34 y solo 3 por debajo de 3.5 estrellas. Es un mercado competido y bien valorado, donde conviene diferenciarse por precio o experiencia.
 <p align="center">
   <img src="reports/figures/05_miami_vs_nacional.png" width="700">
 </p>

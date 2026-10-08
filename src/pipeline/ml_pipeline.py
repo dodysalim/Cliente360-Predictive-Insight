@@ -107,9 +107,10 @@ class MLPipeline:
 
         # Remover target de features
         # Excluir el target y las features calculadas a partir de él (fuga de datos):
-        # ltv_mensual = gasto x frecuencia, ratio_gasto_ingreso = gasto / ingresos,
-        # engagement_score incluye el gasto normalizado.
-        target_derived = {'ltv_mensual', 'ratio_gasto_ingreso', 'engagement_score'}
+        # ltv_* = gasto x frecuencia, ratio/proporcion_gasto_ingreso = gasto / ingresos,
+        # gasto_por_visita = gasto / frecuencia, engagement_* incluye el gasto normalizado.
+        target_derived = {'ltv_mensual', 'ltv_anual', 'ratio_gasto_ingreso', 'proporcion_gasto_ingreso',
+                          'gasto_por_visita', 'engagement_score', 'engagement_categoria'}
         feature_cols = [c for c in numeric_cols if c != target_col and c not in target_derived]
 
         X = df[feature_cols].fillna(0)
