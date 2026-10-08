@@ -2,7 +2,7 @@
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║           REPORTE EJECUTIVO — INSIGHTREACH ANALYTICS                        ║
 ║           Proyecto: Conociendo al Cliente 360°                              ║
-║           Autor: Dody Dueñas  |  Fecha: 2026-04-09  |  v2.0           ║
+║           Autor: Dody Dueñas  |  Fecha: 2026-10-07  |  v2.0           ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -23,7 +23,7 @@ avanzadas de Machine Learning para responder las preguntas estratégicas del neg
   H-01: Solo 42.8% de clientes son Premium — alto potencial de conversión
   H-02: 34.1% demanda plant-based — oferta de Yelp no lo refleja (brecha)
   H-03: Ingresos y frecuencia son los mejores predictores de gasto (importancia RF top-2)
-  H-04: El modelo predictivo (XGBoost/GBM) alcanza R² > 0.80 en validación cruzada
+  H-04: El modelo predictivo (XGBoost/GBM) alcanza R² ≈ 0.45 (CV 0.44) tras excluir features derivadas del target
   H-05: Ciudades con ratio CLI/REST > 5x representan territorio de alta oportunidad
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -45,6 +45,6 @@ avanzadas de Machine Learning para responder las preguntas estratégicas del neg
   📂 Datos  : data/processed/ (clean, features, clusters, yelp, market)
 
 ══════════════════════════════════════════════════════════════════════════════
-Generado: 2026-04-09 12:58:59
+Generado: 2026-10-07 19:18:13
 Bootcamp Data Science — Henry | Dody Dueñas | Abril 2026
 ══════════════════════════════════════════════════════════════════════════════

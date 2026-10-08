@@ -106,7 +106,11 @@ class MLPipeline:
         numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
 
         # Remover target de features
-        feature_cols = [c for c in numeric_cols if c != target_col]
+        # Excluir el target y las features calculadas a partir de él (fuga de datos):
+        # ltv_mensual = gasto x frecuencia, ratio_gasto_ingreso = gasto / ingresos,
+        # engagement_score incluye el gasto normalizado.
+        target_derived = {'ltv_mensual', 'ratio_gasto_ingreso', 'engagement_score'}
+        feature_cols = [c for c in numeric_cols if c != target_col and c not in target_derived]
 
         X = df[feature_cols].fillna(0)
         y = df[target_col] if target_col in df.columns else None

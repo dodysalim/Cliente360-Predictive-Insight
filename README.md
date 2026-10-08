@@ -53,7 +53,7 @@ Consulta [el caso de proyecto](docs/PORTFOLIO_CASE.md) para el alcance y los cri
 ## 🎯 El Desafío de Negocio: Visión 360°
 
 La organización enfrentaba problemas de **Ceguera Transaccional**, **Marketing Ineficiente** y **Desconexión con el Entorno**. Este proyecto aborda estos retos mediante:
-*   **CLV Predictivo**: Proyecciones financieras con un **R² de 0.85**.
+*   **Predicción de gasto**: XGBoost con **R² 0.45** y error medio de USD 13.7 (33% menos que el baseline), tras corregir una fuga de datos.
 *   **Eficiencia en Marketing**: Segmentación algorítmica para optimizar el CAC.
 *   **Geomarketing**: Identificación de brechas de oferta externa en ciudades clave.
 
@@ -193,13 +193,15 @@ Hemos implementado un pipeline de limpieza robusto que maneja:
 ## 🧠 Inteligencia Predictiva y ML
 
 ### Predicción de Gasto (XGBoost)
-Logramos un **R² de 0.85**, permitiendo proyecciones financieras precisas.
+**R² = 0.45** en el set de prueba (CV 5-fold: 0.44 ± 0.01) y MAE de USD 13.7 frente a USD 20.4 del baseline.
+
+> ⚠️ **Fuga de datos corregida:** la versión inicial alcanzaba un R² de 0.9996 porque usaba `ltv_mensual`, `ratio_gasto_ingreso` y `engagement_score`, que se calculan a partir del gasto que se quiere predecir. Se excluyeron en `ml_pipeline.py` y en el notebook 04.
 <p align="center">
   <img src="reports/figures/11_regression_analysis.png" width="700">
 </p>
 
-### Segmentación Psicotográfica (K-Means++)
-Identificamos 4 arquetipos de clientes para personalización táctica.
+### Segmentación de Clientes (K-Means++)
+El mejor coeficiente de silueta se obtuvo con **k = 2 (0.39)**: un segmento **VIP** (38% de los clientes) que genera ~76% del valor mensual y un segmento de **cliente promedio** (62%).
 <p align="center">
   <img src="reports/figures/13_clustering_analysis.png" width="700">
 </p>
@@ -208,7 +210,7 @@ Identificamos 4 arquetipos de clientes para personalización táctica.
 
 ## 🌆 Caso de Éxito: Mercado Miami
 
-Miami es nuestro hub estratégico. El análisis detectó una gran oportunidad en el segmento "Casual Quality", donde la oferta local es deficiente según los ratings de Yelp.
+Se analizaron 463 restaurantes de Miami con la API de Yelp: rating promedio de 4.34 y solo 6 por debajo de 3.5 estrellas. Es un mercado competido y bien valorado, donde conviene diferenciarse por precio o experiencia.
 <p align="center">
   <img src="reports/figures/05_miami_vs_nacional.png" width="700">
 </p>
