@@ -1,0 +1,7 @@
+# Cliente360 · herramientas de desarrollo
+-r requirements.txt
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.0.0
+flake8>=6.1.0
+isort>=5.12.0

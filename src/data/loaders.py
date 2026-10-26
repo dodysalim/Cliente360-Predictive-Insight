@@ -139,8 +139,10 @@ class YelpDataLoader(BaseDataLoader):
 
     @log_execution()
     def load_from_external(self, filename: str = "yelp_restaurants (2).csv") -> pd.DataFrame:
-        """Cargar archivo desde directorio external."""
+        """Cargar archivo desde data/external; si no existe, usar data/raw."""
         file_path = Settings.EXTERNAL_DATA_DIR / filename
+        if not file_path.exists():
+            file_path = Settings.RAW_DATA_DIR / filename
         return self.load(file_path)
 
 
