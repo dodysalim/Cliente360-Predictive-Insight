@@ -12,4 +12,3 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y [
 - Dependencias separadas en `requirements.txt` (ejecución) y `requirements-dev.txt` (desarrollo); se eliminaron paquetes sin uso.
 - CI instala desde `requirements-dev.txt`.
 - Licencia MIT, insignias de CI y versión en el README.
-
