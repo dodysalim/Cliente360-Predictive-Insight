@@ -1,2 +1,0 @@
-expression DataFolder = "C:\Dody-PowerBI\Cliente360-Predictive-Insight\powerbi\data\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
-	kind: m
