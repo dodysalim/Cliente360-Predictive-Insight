@@ -1,24 +1,42 @@
-![Cliente360](docs/cover.svg)
+<p align="center"><img src="https://dodysalim.github.io/assets/project-covers/cliente360.webp" alt="Cliente360" width="100%"></p>
 
-# Cliente360
+<h1 align="center">Cliente360</h1>
 
-**Limpieza, segmentación y modelos para explorar clientes y oportunidades de mercado.**
+<p align="center"><b>Limpieza, segmentación y modelos para entender clientes y oportunidades de mercado.</b></p>
 
-HENRY · PROYECTO INTEGRADOR · Python · pandas · scikit-learn · Power BI
+<p align="center">
+<img src="https://img.shields.io/badge/Henry_%C2%B7_Proyecto_integrador-75E6CE?style=for-the-badge&labelColor=0b1222" alt="Henry · Proyecto integrador">
+</p>
 
-[Portafolio](https://dodysalim.github.io/) · [Caso y alcance](docs/PORTFOLIO_CASE.md) · [Verificación](docs/VALIDATION.md)
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas"> <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="scikit-learn"> <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter"> <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logoColor=black" alt="Power BI">
+</p>
 
-## La pregunta
+<p align="center"><a href="https://dodysalim.github.io/"><b>🌐 Portafolio</b></a> · <a href="docs/PORTFOLIO_CASE.md"><b>📄 Caso de estudio</b></a> · <a href="docs/VALIDATION.md"><b>✅ Verificación</b></a></p>
+
+---
+
+## 📌 Resumen en 30 segundos
+
+| | |
+| --- | --- |
+| **🎯 Problema** | Identificar perfiles de clientes y qué conclusiones permite realmente la cobertura de los datos. |
+| **🛠️ Solución** | Pipeline ETL, ingeniería de características, regresión y clustering, organizado por etapas. |
+| **📈 Entregables** | Informe ejecutivo y dashboard Power BI de 5 páginas. |
+| **🧪 Calidad** | 6 pruebas automatizadas de carga y regresión. |
+| **👤 Autor** | Dody Dueñas Remache. |
+
+## ❓ La pregunta de negocio
 
 ¿Qué perfiles aparecen entre los clientes y qué conclusiones permite realmente la cobertura de los datos?
 
-## Qué puedes revisar
+## ✨ Qué incluye
 
 - ETL, ingeniería de características, regresión y clustering.
 - Notebooks por etapa, comparativas de modelos y tablas procesadas.
 - Informe ejecutivo y dashboard Power BI con cinco páginas.
 
-## Inicio local
+## 🚀 Cómo ejecutarlo
 
 Usa Python 3.11 o 3.12 en un entorno independiente. Desde la raíz:
 
@@ -37,15 +55,15 @@ python -m pytest tests -q
 python run_pipeline.py
 ```
 
-## Datos y configuración
+## 🗂️ Datos y configuración
 
 Datos y resultados procesados presentes. La cobertura de Yelp utilizada en Power BI corresponde a Miami, con 200 establecimientos únicos; no permite comparar otras ciudades con Yelp.
 
-## Power BI · PC y móvil
+## 📊 Power BI · PC y móvil
 
 [Archivos e instrucciones](powerbi/README.md). Descarga el repositorio completo y abre `powerbi/Abrir-PowerBI.bat` en Windows; después pulsa **Actualizar**. Incluye A4 horizontal a tamaño real (100 %) y diseño móvil vertical. El archivo `.pbip` necesita sus carpetas Report, SemanticModel y data.
 
-## Recorrido por el código
+## 🧭 Estructura del repositorio
 
 | Ruta | Qué contiene |
 | --- | --- |
@@ -55,7 +73,7 @@ Datos y resultados procesados presentes. La cobertura de Yelp utilizada en Power
 | [reports/](reports/) | Tablas, figuras e informe |
 | [tests/](tests/) | Pruebas de carga y regresión |
 
-## Comprobación y alcance
+## ✅ Calidad y alcance
 
 Seis pruebas existentes aprobadas. Las tablas y el modelo Power BI se verificaron en la entrega de BI anterior.
 
@@ -67,8 +85,15 @@ Para repetir las pruebas desde la raíz:
 python -m pytest tests -q
 ```
 
-## Autoría
+## 👥 Autoría
 
 Proyecto académico Henry. Dody Salim Dueñas Remache.
 
 [Documentación anterior](docs/ORIGINAL_README.md), conservada como referencia histórica.
+
+---
+
+<p align="center">
+<b>Dody Dueñas Remache</b> · Analista de Datos / Data Scientist<br>
+<a href="https://dodysalim.github.io/">Portafolio</a> · <a href="https://github.com/dodysalim">GitHub</a> · <a href="https://www.linkedin.com/in/dody-duenas/">LinkedIn</a> · <a href="mailto:dodydurema67@gmail.com">dodydurema67@gmail.com</a>
+</p>

@@ -1,0 +1,35 @@
+table Importancia
+
+	column 'Feature'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Feature
+
+	column 'Importancia'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Importancia
+
+	column 'Ranking_RF'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Ranking_RF
+
+	column 'En_KBest'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: En_KBest
+
+	measure KPI_Importancia = MAX(Importancia[Importancia])
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	partition Importancia = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Importancia.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"Feature", type text}, {"Importancia", type number}, {"Ranking_RF", type number}, {"En_KBest", type text}}, "en-US")
+				in
+				    Typed

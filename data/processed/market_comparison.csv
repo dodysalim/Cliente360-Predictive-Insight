@@ -1,0 +1,11 @@
+city_norm,Clientes_Demanda,Restaurantes_Oferta,Ratio_CLI_REST,Oportunidad
+Chicago,5384,0,inf,🟢 Máxima oportunidad
+New York,4769,0,inf,🟢 Máxima oportunidad
+Miami,3186,463,6.88,🟡 Oportunidad moderada
+San Diego,3075,0,inf,🟢 Máxima oportunidad
+Dallas,2602,0,inf,🟢 Máxima oportunidad
+Boston,2547,0,inf,🟢 Máxima oportunidad
+Denver,2523,0,inf,🟢 Máxima oportunidad
+Houston,2212,0,inf,🟢 Máxima oportunidad
+Seattle,2191,0,inf,🟢 Máxima oportunidad
+Phoenix,1511,0,inf,🟢 Máxima oportunidad
