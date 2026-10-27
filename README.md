@@ -16,7 +16,7 @@
 <a href="https://github.com/dodysalim/Cliente360-Predictive-Insight/actions"><img src="https://github.com/dodysalim/Cliente360-Predictive-Insight/actions/workflows/local-tests.yml/badge.svg" alt="CI"></a> <img src="https://img.shields.io/badge/versión-1.1.0-8F7BFF?style=flat-square" alt="Versión 1.1.0"> <img src="https://img.shields.io/badge/licencia-MIT-30405B?style=flat-square" alt="Licencia MIT">
 </p>
 
-<p align="center"><a href="https://dodysalim.github.io/"><b>🌐 Portafolio</b></a> · <a href="docs/PORTFOLIO_CASE.md"><b>📄 Caso de estudio</b></a> · <a href="docs/VALIDATION.md"><b>✅ Verificación</b></a></p>
+<p align="center"><a href="https://dodysalim.github.io/"><b>🌐 Portafolio</b></a> · <a href="docs/PORTFOLIO_CASE.md"><b>📄 Caso de estudio</b></a> · <a href="docs/VALIDATION.md"><b>✅ Verificación</b></a> · <a href="README.en.md"><b>🇺🇸 English</b></a></p>
 
 ---
 
@@ -39,6 +39,20 @@
 - ETL, ingeniería de características, regresión y clustering.
 - Notebooks por etapa, comparativas de modelos y tablas procesadas.
 - Informe ejecutivo y dashboard Power BI con cinco páginas.
+
+## 🏗️ Arquitectura
+
+```mermaid
+flowchart LR
+    RAW[(CSV de clientes<br/>30.000 registros)] --> LD[loaders]
+    YELP[(Yelp · Miami)] --> LD
+    LD --> CL[cleaners] --> TR[transformers]
+    TR --> FB[features/builders<br/>+ selectors] --> MD[models<br/>regresión y clustering]
+    MD --> EV[evaluation]
+    TR --> PROC[(data/processed)]
+    PROC --> PBI[Power BI · 5 páginas]
+    EV --> RPT[Informe ejecutivo]
+```
 
 ## 🚀 Cómo ejecutarlo
 
